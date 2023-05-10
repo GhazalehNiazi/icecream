@@ -1,0 +1,40 @@
+{
+  "data": [
+    {
+      "name": "آیتم‌های ویژه",
+      "id": "specials",
+      "img": "cat-specials.png"
+    },
+    {
+      "name": "جلاتو‌های ترکیبی",
+      "id": "mixed",
+      "img": "/cat-mixed.svg"
+    },
+    {
+      "name": "سافت جلاتوها",
+      "id": "softs",
+      "img": "/cat-softs.svg"
+    },
+    {
+      "name": "اسکوپ‌ها",
+      "id": "scoop",
+      "img": "/cat-scoop.svg"
+    },
+    {
+      "name": "نوشیدنیهای سرد (بدون Caffeine)",
+      "id": "coldDecaf",
+      "img": "/cat-coldDecaf.svg"
+    },
+    {
+      "name": "نوشیدنیهای سرد (دار Caffeine)",
+      "id": "coldCaf",
+      "img": "/cat-coldCaf.png"
+    },
+    {
+      "name": "نوشیدنیهای گرم",
+      "id": "hotdrink",
+      "img": "/cat-hotdrink.svg"
+    },
+    { "name": "سایر", "id": "others", "img": "/cat-others.svg" }
+  ]
+}
