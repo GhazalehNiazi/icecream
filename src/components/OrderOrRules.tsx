@@ -2,45 +2,47 @@
 import React, { useState } from "react";
 import clsx from "clsx";
 import Order from "./Order";
-import Rules from "./Rules";
+import Info from "./Info";
 
 function OrderOrRules() {
   const activeClassNames =
     "bg-white border-x border-t border-gray-300 rounded-t-md";
   const deactiveClassNames = "border-b border-gray-300";
 
-  const [orderActive, setOrderActive] = useState(true);
+  const [orderIsActive, setOrderIsActive] = useState(true);
 
   const orderClickHandler = () => {
-    setOrderActive(true);
+    setOrderIsActive(true);
   };
-  const rulesClickHandler = () => {
-    setOrderActive(false);
+  const infoClickHandler = () => {
+    setOrderIsActive(false);
   };
 
   return (
     <div>
-      <nav className={clsx("flex justify-center w-full  pt-6 pb-3 text-center")}>
+      <nav
+        className={clsx("flex justify-center w-full  pt-6 pb-3 text-center")}
+      >
         <div
-          onClick={orderClickHandler}
+          onClick={infoClickHandler}
           className={clsx(
             "p-3 basis-1/2 ",
-            orderActive ? activeClassNames : deactiveClassNames
+            orderIsActive ? deactiveClassNames : activeClassNames
           )}
         >
           اطلاعات مجموعه
         </div>
         <div
-          onClick={rulesClickHandler}
+          onClick={orderClickHandler}
           className={clsx(
             "p-3 basis-1/2 ",
-            !orderActive ? activeClassNames : deactiveClassNames
+            orderIsActive ? activeClassNames : deactiveClassNames
           )}
         >
           منوی سفارش
         </div>
       </nav>
-      <div>{orderActive ? <Order /> : <Rules />}</div>
+      <div>{orderIsActive ? <Order /> : <Info />}</div>
     </div>
   );
 }
