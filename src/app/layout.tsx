@@ -18,8 +18,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={`${vazirmatn.variable} ${inter.variable}`}>
+    <html className="scroll-smooth" lang="en">
+      <body className={ `${vazirmatn.variable} ${inter.variable}`}>
         {children}
       </body>
     </html>
