@@ -23,7 +23,7 @@ function Order() {
   const itemsData: itemsType[] = items.data;
 
   return (
-    <div className="scroll-smooth">
+    <div className="">
       <div className="bg-gray-50  h-[6rem] pt-2 flex flex-row-reverse content-center overflow-scroll text-sm text-center w-full border-b border-gray-200 sticky top-0">
         {categoriesData.map((category: categoryType) => (
           <a
@@ -35,14 +35,16 @@ function Order() {
               className={`basis-1/2 w-12 h-12  bg-center bg-contain bg-no-repeat z-2 `}
               style={{ backgroundImage: `url('${category.img}')` }}
             ></div>
-            <div className="basis-1/2 w-24 break-keep text-sm leading-none">{category.name}</div>
+            <div className="basis-1/2 w-24 break-keep text-sm leading-none">
+              {category.name}
+            </div>
           </a>
         ))}
       </div>
 
       {categoriesData.map((category) => (
-        <div key={category.id} id={category.id}>
-          <div  className="flex flex-col items-center">
+        <div className="scroll-mt-24  " key={category.id} id={category.id}>
+          <div className="flex flex-col items-center">
             <div className="text-right text-2xl font-bold text-gray-500 px-10 py-2 self-end">
               {category.name}
             </div>
