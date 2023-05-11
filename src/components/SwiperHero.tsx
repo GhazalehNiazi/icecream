@@ -3,7 +3,7 @@ import { createContext } from "react";
 import React from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper";
+import { Autoplay, Mousewheel, Pagination } from "swiper";
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -11,16 +11,23 @@ import "swiper/css/pagination";
 function SwiperHero() {
   return (
     <Swiper
+      cssMode={true}
       pagination={{
         clickable: true,
       }}
-      modules={[Pagination]}
-      className="h-max max-w-screen-2xl w-full h-full"
+      mousewheel={true}
+      loop={true}
+      autoplay={{
+        delay: 2500,
+        disableOnInteraction: false,
+      }}
+      modules={[Pagination, Mousewheel, Autoplay]}
+      className="max-h-[10rem] max-w-full "
     >
       <SwiperSlide className="">
         <Image
           className=""
-          height={700}
+          height={800}
           width={400}
           alt="slide1"
           src="/slide1.jpg"
