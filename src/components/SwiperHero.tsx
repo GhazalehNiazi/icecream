@@ -22,7 +22,7 @@ function SwiperHero() {
         disableOnInteraction: false,
       }}
       modules={[Pagination, Mousewheel, Autoplay]}
-      className="max-h-[10rem] max-w-full "
+      className="max-h-[8rem] max-w-full "
     >
       <SwiperSlide className="">
         <Image
