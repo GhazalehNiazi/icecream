@@ -18,7 +18,7 @@ function EachItem({
         src={item.img}
         width={300}
         height={300}
-        className="rounded-lg"
+        className="rounded-t-lg"
       />
       <div className="p-2 flex flex-col items-end gap-2">
         <div className="font-bold text-right">{item.name}</div>
