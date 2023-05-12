@@ -19,7 +19,14 @@ export default function RootLayout({
 }) {
   return (
     <html className="scroll-smooth" lang="en">
-      <body className={ `${vazirmatn.variable} ${inter.variable}`}>
+       <meta name="theme-color" content="#F9FAFB" />
+      <meta
+        name="apple-mobile-web-app-status-bar-style"
+        content="#F9FAFB"
+      ></meta>
+      <body
+        className={`${vazirmatn.variable} ${inter.variable}  min-h-screen bg-gray-50`}
+      >
         {children}
       </body>
     </html>

@@ -4,7 +4,7 @@ import TopPart from "@/components/TopPart";
 
 export default function Home() {
   return (
-    <main className="scroll-smooth bg-gray-50">
+    <main className="scroll-smooth ">
     
       <Navbar />
       <div className="bg-gray-50">
