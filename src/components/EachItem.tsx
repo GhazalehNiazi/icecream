@@ -15,12 +15,9 @@ function EachItem({
   };
 }) {
   const dispatch = useDispatch();
-  const selector = useSelector((state) => state);
+
   const buttonHandler = () => {
-    console.log("clicker");
-    console.log(selector);
     dispatch(add_item(item));
-    console.log(selector);
   };
 
   return (
