@@ -6,6 +6,7 @@ interface item {
   description: string;
   price: number;
   img: string;
+  quntity: number;
 }
 
 const initialState: { items: item[]; total: number } = { items: [], total: 0 };
@@ -15,10 +16,16 @@ export const cartSlice = createSlice({
   initialState,
   reducers: {
     add_item: (state, action: PayloadAction<item>) => {
-      console.log(action);
-      console.log(current(state));
-      state.items.push(action.payload);
-      state.total += action.payload.price;
+      const itemIndex = state.items.findIndex(
+        (item) => item.id == action.payload.id
+      );
+      if (itemIndex >= 0) {
+        state.items[itemIndex].quntity += 1;
+        state.total += action.payload.price;
+      } else {
+        state.items.push({ ...action.payload, quntity: 1 });
+        state.total += action.payload.price;
+      }
     },
   },
 });
