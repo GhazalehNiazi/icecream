@@ -1,5 +1,8 @@
 import React from "react";
 import Image from "next/image";
+import { useDispatch } from "react-redux";
+import { add_item } from "@/store/features/cartSlice";
+import { useSelector } from "react-redux";
 function EachItem({
   item,
 }: {
@@ -11,9 +14,19 @@ function EachItem({
     img: string;
   };
 }) {
+  const dispatch = useDispatch();
+  const selector = useSelector((state) => state);
+  const buttonHandler = () => {
+    console.log("clicker");
+    console.log(selector);
+    dispatch(add_item(item));
+    console.log(selector);
+  };
+
   return (
     <div key={item.id} className="m-3 border border-gray-300 rounded-lg w-72">
       <Image
+        priority
         alt={item.name}
         src={item.img}
         width={300}
@@ -30,6 +43,7 @@ function EachItem({
             {item.price} <span>تومان</span>{" "}
           </div>
           <button
+            onClick={buttonHandler}
             style={{ backgroundImage: 'url("/cloud.svg")' }}
             className="w-9 h-9 object-contain bg-no-repeat bg-center z-3 text-3xl font-extralight text-center align-middle"
           >
