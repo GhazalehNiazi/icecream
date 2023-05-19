@@ -10,18 +10,18 @@ function Cart({ fullSize, fullSizeHandler }: { fullSize: boolean }) {
   return (
     <div
       className={clsx(
-        "bg-white",
+        "bg-white lg:static lg:h-max lg:basis-1/3 lg:w-5/12 lg:mr-10 lg:border lg:p-3",
         fullSize
-          ? "h-screen absolute top-0 right-0 left-0 bottom-o h-screen w-full  z-10 overflow-x-hidden"
-          : ""
+          ? "h-screen absolute top-0 right-0 left-0 bottom-o h-screen w-full z-10 overflow-x-hidden"
+          : "lg:sticky lg:top-8"
       )}
     >
       <div
         className={clsx(
-          "bg-white",
+          "bg-white lg:static lg:h-max ",
           fullSize
             ? "h-screen fixed top-0 right-0 left-0 bottom-o h-screen w-full  z-10 overflow-x-hidden"
-            : "hidden"
+            : "hidden lg:block lg:sticky lg:top-0"
         )}
       >
         <div className="p-2 border-b border-gray-200 flex flex-row-reverse items-center w-full justify-between text-xl font-semibold">
@@ -64,10 +64,10 @@ function Cart({ fullSize, fullSizeHandler }: { fullSize: boolean }) {
             <div className="text-lg">هزینه کل</div>
             <div className="text-lg font-semibold">{total} تومان</div>
           </div>
-          <div className="text-cyan-500 text-semibold text-xl my-6">
+          <div className="text-cyan-500 text-bold text-xl my-6">
             کد تخفیف دارید؟
           </div>
-          <button className="bg-cyan-500 text-slate-50  px-20 py-2 text-thin text-xl rounded-lg">
+          <button className="bg-cyan-500 w-11/12 text-slate-50  lg:px-14 xl:px-20 py-2 text-thin text-xl rounded-lg">
             تکمیل سفارش
           </button>
         </div>

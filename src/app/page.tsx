@@ -15,9 +15,9 @@ export default function Home() {
     <Provider store={store}>
       <main className="min-h-screen ">
         <Navbar />
-        <div className="bg-gray-50 ">
+        <div className="bg-gray-50 lg:px-14">
           <TopPart />
-          <div className=" pl-3 lg:flex lg:flex-row-reverse lg:w-full lg:justify-between">
+          <div className=" pl-3 pt-6  lg:flex lg:flex-row-reverse lg:justify-between">
             <OrderOrRules cartFullSize={showFullCart} />
             <Cart fullSize={showFullCart} fullSizeHandler={setShowFullCart} />
           </div>

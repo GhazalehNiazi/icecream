@@ -21,18 +21,21 @@ function EachItem({
   };
 
   return (
-    <div key={item.id} className="m-3 border border-gray-300 rounded-lg w-72">
+    <div
+      key={item.id}
+      className="m-3 border border-gray-300 rounded-lg flex flex-col items-center "
+    >
       <Image
         priority
         alt={item.name}
         src={item.img}
-        width={300}
-        height={300}
+        width={600}
+        height={600}
         className="rounded-t-lg"
       />
-      <div className="p-2 flex flex-col items-end gap-2">
+      <div className="p-2 flex flex-col items-end gap-2 w-full">
         <div className="font-bold text-right">{item.name}</div>
-        <div className="text-end font-extralight text-sm text-right">
+        <div className="text-end font-extralight text-sm text-right sm:hidden">
           {item.description}
         </div>
         <div className="flex flex-row-reverse w-full items-center justify-between">

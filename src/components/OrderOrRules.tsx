@@ -19,9 +19,9 @@ function OrderOrRules({ cartFullSize }: { cartFullSize: boolean }) {
   };
 
   return (
-    <div className="">
+    <div className="lg:basis-2/3 lg:w-8/12">
       <nav
-        className={clsx("flex justify-center w-full  pt-6 pb-3 text-center")}
+        className={clsx("flex  justify-center w-full  pb-3 lg:pb-0 text-center")}
       >
         <div
           onClick={infoClickHandler}
@@ -42,7 +42,7 @@ function OrderOrRules({ cartFullSize }: { cartFullSize: boolean }) {
           منوی سفارش
         </div>
       </nav>
-      <div>{orderIsActive ? <Order /> : <Info />}</div>
+      <div className="lg:border">{orderIsActive ? <Order /> : <Info />}</div>
     </div>
   );
 }

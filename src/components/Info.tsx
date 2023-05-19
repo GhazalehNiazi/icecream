@@ -2,7 +2,7 @@ import React from "react";
 
 function Info() {
   return (
-    <div className="px-3 flex flex-col items-center content-center gap-10">
+    <div className="lg:w-full py-4 px-3 flex flex-col items-center content-center gap-10 ">
       <div className="flex flex-col items-center content-center gap-2">
         <div className="text-cyan-500 font-bold text-xl ">سرویس‌دهی آنلاین</div>
         <table className="border-collapse border-b border-slate-500 text-right table-auto">
