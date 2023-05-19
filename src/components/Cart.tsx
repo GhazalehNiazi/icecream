@@ -51,7 +51,7 @@ function Cart({ fullSize, fullSizeHandler }: { fullSize: boolean }) {
               <div className="w-6 h-6 border border-cyan-400 rounded-xl text-center align-middle leading-[18px]">
                 +
               </div>
-              <div>{item.quantity} تومان</div>
+              <div>{item.quntity}</div>
               <div className="w-6 h-6 border border-cyan-400 rounded-xl text-center align-middle leading-[18px]">
                 -
               </div>
