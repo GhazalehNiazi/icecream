@@ -21,7 +21,7 @@ function Cart({ fullSize, fullSizeHandler }: { fullSize: boolean }) {
           "bg-white",
           fullSize
             ? "h-screen fixed top-0 right-0 left-0 bottom-o h-screen w-full  z-10 overflow-x-hidden"
-            : ""
+            : "hidden"
         )}
       >
         <div className="p-2 border-b border-gray-200 flex flex-row-reverse items-center w-full justify-between text-xl font-semibold">

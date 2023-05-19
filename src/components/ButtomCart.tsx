@@ -44,7 +44,7 @@ function ButtomCart({ fullCart }) {
         </div>
         <div className="text-sm h-8 py-1 px-4 bg-cyan-400 rounded-2xl flex items-center flex-row-reverse gap-2 ">
           <span>{total}</span>
-          <span> تومان</span>
+          <span>تومان</span>
         </div>
       </div>
     )
