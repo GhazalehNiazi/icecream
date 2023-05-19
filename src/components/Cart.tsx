@@ -3,7 +3,7 @@ import { TrashIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { useSelector } from "react-redux";
 import clsx from "clsx";
 
-function Cart({ fullSize, fullSizeHandler }: { fullSize: boolean }) {
+function Cart({ fullSize, fullSizeHandler }: { fullSize: boolean , fullSizeHandler }) {
   const items = useSelector((state) => state.cart.items);
   const total = useSelector((state) => state.cart.total);
 
