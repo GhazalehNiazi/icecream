@@ -33,12 +33,12 @@ function Cart({
         <div className="p-2 border-b border-gray-200 flex items-center w-full justify-between text-xl font-semibold">
           <div>سبد خرید</div>
           <div className="flex ">
+            <TrashIcon width={25} height={25} />
             <XMarkIcon
               width={25}
               height={25}
               onClick={() => fullSizeHandler(false)}
             />
-            <TrashIcon width={25} height={25} />
           </div>
         </div>
 
