@@ -7,7 +7,7 @@ function TopPart() {
     <div className=" px-3 py-2">
       <div className=" w-full min-h-max  flex flex-col gap-8">
         <SwiperHero />
-        <div className="flex items-center gap-4 place-content-end">
+        <div className="flex items-center gap-4 ">
           سفارش می‌پذیریم
           <span className="mr-2 w-2 h-2 bg-green-400 rounded-lg outline outline-green-400 outline-offset-1 animate-ping"></span>
         </div>

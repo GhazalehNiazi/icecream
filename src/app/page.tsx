@@ -9,7 +9,7 @@ import Cart from "@/components/Cart";
 import { useState } from "react";
 
 export default function Home() {
-  const [showFullCart, setShowFullCart] = useState(false);
+  const [showFullCart, setShowFullCart] = useState<true | false>(false);
 
   return (
     <Provider store={store}>
@@ -17,7 +17,7 @@ export default function Home() {
         <Navbar />
         <div className="bg-gray-50 lg:px-14">
           <TopPart />
-          <div className=" pl-3 pt-6  lg:flex lg:flex-row-reverse lg:justify-between">
+          <div className=" pl-3 pt-6  lg:flex  lg:justify-between">
             <OrderOrRules cartFullSize={showFullCart} />
             <Cart fullSize={showFullCart} fullSizeHandler={setShowFullCart} />
           </div>

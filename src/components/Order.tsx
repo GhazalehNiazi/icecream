@@ -24,7 +24,7 @@ function Order() {
 
   return (
     <div className="w-full">
-      <div className="bg-gray-50 pt-2 h-[6rem] flex flex-row-reverse content-center overflow-scroll text-sm text-center border-b border-gray-200 sticky top-0">
+      <div className="bg-gray-50 pt-2 h-[6rem] flex flex-row content-center overflow-scroll text-sm text-center border-b border-gray-200 sticky top-0">
         {categoriesData.map((category: categoryType) => (
           <a
             href={`#${category.id}`}
@@ -48,10 +48,10 @@ function Order() {
             key={category.id}
             id={category.id}
           >
-            <div className="text-right text-2xl font-bold text-gray-500 px-10 py-2 self-end">
+            <div className="text-right text-2xl font-bold text-gray-500 px-10 py-2 self-start">
               {category.name}
             </div>
-            <div className="sm:grid sm:grid-cols-2 min-[1200px]:grid-cols-3 gap-2 ">
+            <div className="sm:grid sm:grid-cols-2 min-[1200px]:grid-cols-3 gap-2 lg:w-full ">
               {itemsData.map(
                 (icecream) =>
                   icecream.cat === category.id && (

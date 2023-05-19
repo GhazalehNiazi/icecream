@@ -33,13 +33,13 @@ function EachItem({
         height={600}
         className="rounded-t-lg"
       />
-      <div className="p-2 flex flex-col items-end gap-2 w-full">
+      <div className="p-2 flex flex-col  gap-2 w-full">
         <div className="font-bold text-right">{item.name}</div>
-        <div className="text-end font-extralight text-sm text-right sm:hidden">
+        <div className=" font-extralight text-sm text-right sm:hidden">
           {item.description}
         </div>
-        <div className="flex flex-row-reverse w-full items-center justify-between">
-          <div className="flex flex-row-reverse gap-2">
+        <div className="flex flex-row w-full items-center justify-between">
+          <div className="flex flex-row gap-2">
             {item.price} <span>تومان</span>{" "}
           </div>
           <button
