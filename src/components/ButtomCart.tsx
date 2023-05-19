@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { ShoppingCartIcon } from "@heroicons/react/24/outline";
 
-function ButtomCart() {
+function ButtomCart({ fullCart }) {
   interface item {
     name: string;
     id: string;
@@ -21,16 +21,22 @@ function ButtomCart() {
     const initialValue = 0;
     if (items.length > 0) {
       const num = items.reduce(
-        ( currentvalue: number , item: item,) => currentvalue + item.quntity,
+        (currentvalue: number, item: item) => currentvalue + item.quntity,
         initialValue
       );
       setNumberOfItems(num);
     }
   }, [items]);
 
+  const sideCartHandler = () => {
+    fullCart(true);
+  };
   return (
     items.length && (
-      <div className="text-slate-50 px-4 py-2 bottom-0 sticky bg-cyan-500 h-14 w-full flex justify-between w-full flex-row-reverse items-center">
+      <div
+        onClick={sideCartHandler}
+        className="text-slate-50 px-4 py-2 bottom-0 sticky bg-cyan-500 h-14 w-full flex justify-between w-full flex-row-reverse items-center lg:hidden"
+      >
         <div className="text-xl flex flex-row-reverse items-center gap-1">
           <ShoppingCartIcon width={20} height={20} />
           سبد خرید

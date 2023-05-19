@@ -5,17 +5,24 @@ import TopPart from "@/components/TopPart";
 import { Provider } from "react-redux";
 import { store } from "@/store/store";
 import ButtomCart from "@/components/ButtomCart";
+import Cart from "@/components/Cart";
+import { useState } from "react";
 
 export default function Home() {
+  const [showFullCart, setShowFullCart] = useState(false);
+
   return (
     <Provider store={store}>
-      <main className="min-h-screen">
+      <main className="min-h-screen ">
         <Navbar />
-        <div className="bg-gray-50">
+        <div className="bg-gray-50 ">
           <TopPart />
-          <OrderOrRules />
+          <div className=" pl-3 lg:flex lg:flex-row-reverse lg:w-full lg:justify-between">
+            <OrderOrRules cartFullSize={showFullCart} />
+            <Cart fullSize={showFullCart} fullSizeHandler={setShowFullCart} />
+          </div>
         </div>
-        <ButtomCart />
+        <ButtomCart fullCart={setShowFullCart} />
       </main>
     </Provider>
   );

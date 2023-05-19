@@ -4,7 +4,7 @@ import clsx from "clsx";
 import Order from "./Order";
 import Info from "./Info";
 
-function OrderOrRules() {
+function OrderOrRules({ cartFullSize }: { cartFullSize: boolean }) {
   const activeClassNames =
     "bg-white border-x border-t border-gray-300 rounded-t-md";
   const deactiveClassNames = "border-b border-gray-300";
@@ -19,7 +19,7 @@ function OrderOrRules() {
   };
 
   return (
-    <div>
+    <div className="">
       <nav
         className={clsx("flex justify-center w-full  pt-6 pb-3 text-center")}
       >
