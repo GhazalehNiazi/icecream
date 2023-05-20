@@ -27,6 +27,20 @@ export const cartSlice = createSlice({
         state.total += action.payload.price;
       }
     },
+    remove_item: (state, action: PayloadAction<item>) => {
+      const itemIndex = state.items.findIndex(
+        (item) => item.id === action.payload.id
+      );
+      if (state.items[itemIndex].quntity > 1) {
+        state.items[itemIndex].quntity -= 1;
+      } else {
+        state.items.splice(itemIndex, 1);
+      }
+    },
+    remove_all_items: (state) => {
+      state.items = [];
+      state.total = 0;
+    },
   },
 });
-export const { add_item } = cartSlice.actions;
+export const { add_item, remove_all_items, remove_item } = cartSlice.actions;

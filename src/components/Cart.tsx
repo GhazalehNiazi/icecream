@@ -2,6 +2,12 @@ import React from "react";
 import { TrashIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { useSelector } from "react-redux";
 import clsx from "clsx";
+import { useDispatch } from "react-redux";
+import {
+  add_item,
+  remove_item,
+  remove_all_items,
+} from "@/store/features/cartSlice";
 
 function Cart({
   fullSize,
@@ -12,7 +18,23 @@ function Cart({
 }) {
   const items = useSelector((state) => state.cart.items);
   const total = useSelector((state) => state.cart.total);
-
+  const dispatch = useDispatch();
+  interface item {
+    name: string;
+    id: string;
+    description: string;
+    price: number;
+    img: string;
+  }
+  const addItemHandler = (item: item) => {
+    dispatch(add_item(item));
+  };
+  const removeItemHandler = (item: item) => {
+    dispatch(remove_item(item));
+  };
+   const removeAllItemHandler = ()=>{
+     dispatch(remove_all_items())
+   }
   return (
     <div
       className={clsx(
@@ -33,7 +55,7 @@ function Cart({
         <div className="p-2 border-b border-gray-200 flex items-center w-full justify-between text-xl font-semibold">
           <div>سبد خرید</div>
           <div className="flex ">
-            <TrashIcon width={25} height={25} />
+            <TrashIcon onClick={removeAllItemHandler} width={25} height={25} />
             <XMarkIcon
               width={25}
               height={25}
@@ -57,11 +79,17 @@ function Cart({
               </div>
             </div>
             <div className="flex gap-2">
-              <div className="w-6 h-6 border border-cyan-400 rounded-xl text-center align-middle leading-[18px]">
+              <div
+                onClick={() => addItemHandler(item)}
+                className="w-6 h-6 border border-cyan-400 rounded-xl text-center align-middle leading-[18px]"
+              >
                 +
               </div>
               <div>{item.quntity}</div>
-              <div className="w-6 h-6 border border-cyan-400 rounded-xl text-center align-middle leading-[18px]">
+              <div
+                onClick={() => removeItemHandler(item)}
+                className="w-6 h-6 border border-cyan-400 rounded-xl text-center align-middle leading-[18px]"
+              >
                 -
               </div>
             </div>
