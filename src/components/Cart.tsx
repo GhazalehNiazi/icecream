@@ -96,7 +96,7 @@ function Cart({
               >
                 +
               </div>
-              <div>{item.qauntity.toLocaleString("fa-IR")}</div>
+              <div>{item.quantity.toLocaleString("fa-IR")}</div>
               <div
                 onClick={() => removeItemHandler(item)}
                 className=" cursor-pointer w-6 h-6 border border-cyan-400 rounded-xl text-center align-middle leading-[18px]"

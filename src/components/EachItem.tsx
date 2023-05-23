@@ -21,7 +21,7 @@ function EachItem({
     description: string;
     price: number;
     img: string;
-    qauntity: number;
+    quantity: number;
   }
 
   const dispatch = useDispatch();
@@ -40,9 +40,9 @@ function EachItem({
   };
 
   const decrementButtonHandler = () => {
-    if (currentItemSelector.qauntity > 1) {
+    if (currentItemSelector.quantity > 1) {
       dispatch(remove_item(item));
-    } else if (currentItemSelector.qauntity === 1) {
+    } else if (currentItemSelector.quantity === 1) {
       dispatch(remove_item(item));
       setItemIsAdded(false);
     }
@@ -53,7 +53,7 @@ function EachItem({
       key={item.id}
       className={clsx(
         "m-3 border border-gray-300 rounded-lg flex flex-col items-center ",
-        currentItemSelector?.qauntity > 0 ? "border-cyan-500" : ""
+        currentItemSelector?.quantity > 0 ? "border-cyan-500" : ""
       )}
     >
       <Image
@@ -83,7 +83,7 @@ function EachItem({
                 >
                   -
                 </button>
-                {currentItemSelector.qauntity.toLocaleString("fa-IR")}
+                {currentItemSelector.quantity.toLocaleString("fa-IR")}
               </div>
             ) : (
               ""

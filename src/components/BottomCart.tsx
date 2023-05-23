@@ -7,7 +7,7 @@ interface item {
   description: string;
   price: number;
   img: string;
-  qauntity: number;
+  quantity: number;
 }
 
 function BottomCart({
@@ -28,7 +28,7 @@ function BottomCart({
     const initialValue = 0;
     if (items.length > 0) {
       const num = items.reduce(
-        (currentvalue: number, item: item) => currentvalue + item.qauntity,
+        (currentvalue: number, item: item) => currentvalue + item.quantity,
         initialValue
       );
       setNumberOfItems(num);
