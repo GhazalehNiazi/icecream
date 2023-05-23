@@ -8,7 +8,7 @@ interface Item {
   img: string;
   quantity: number;
 }
-type InitialItem = Omit<Item, "quanitity">;
+type InitialItem = Omit <Item, "quantity">;
 
 const initialState: { items: Item[]; total: number } = { items: [], total: 0 };
 export const cartSlice = createSlice({

@@ -30,20 +30,19 @@ const EachItem: React.FC<EachItemProps> = ({ item }) => {
     (state: { cart: { items: Item[]; total: number } }) => state.cart.items
   );
 
-  const currentItemSelector = itemsSelector.find((i) => i.id === item.id);
   
   console.log(itemsSelector);
-
+  
   const [itemIsAdded, setItemIsAdded] = useState(false);
+  const currentItemSelector = itemsSelector.find((i) => i.id === item.id)!;
 
   const incrementButtosnHandler = () => {
     dispatch(add_item(item));
     setItemIsAdded(true);
   };
 
-  if (!currentItemSelector) {
-  return <div>not found</div>
-  }
+  
+  
   const decrementButtonHandler = () => {
     if (currentItemSelector.quantity > 1) {
       dispatch(remove_item(item));
@@ -78,7 +77,7 @@ const EachItem: React.FC<EachItemProps> = ({ item }) => {
             {item.price.toLocaleString("fa-IR")} <span>تومان</span>{" "}
           </div>
           <div className="flex flex-row gap-2 items-center">
-            {itemIsAdded && itemsSelector.length > 0 ? (
+            {itemIsAdded && itemsSelector.length > 0 && (
               <div className="flex flex-row gap-2 items-center">
                 <button
                   onClick={decrementButtonHandler}
@@ -89,9 +88,7 @@ const EachItem: React.FC<EachItemProps> = ({ item }) => {
                 </button>
                 {currentItemSelector.quantity.toLocaleString("fa-IR")}
               </div>
-            ) : (
-              ""
-            )}
+            ) }
             <button
               onClick={incrementButtosnHandler}
               style={{ backgroundImage: 'url("/cloud.svg")' }}
