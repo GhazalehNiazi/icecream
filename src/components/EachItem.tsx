@@ -4,32 +4,28 @@ import { useDispatch } from "react-redux";
 import { add_item, remove_item } from "@/store/features/cartSlice";
 import { useSelector } from "react-redux";
 import clsx from "clsx";
-function EachItem({
-  item,
-}: {
-  item: {
-    name: string;
-    id: string;
-    description: string;
-    price: number;
-    img: string;
-  };
-}) {
-  interface item {
-    name: string;
-    id: string;
-    description: string;
-    price: number;
-    img: string;
-    quantity: number;
-  }
+interface Item {
+  name: string;
+  id: string;
+  description: string;
+  price: number;
+  img: string;
+  quantity: number;
+}
 
+interface EachItemProps {
+  item: Item;
+}
+const EachItem: React.FC<EachItemProps> = ({ item }) => {
   const dispatch = useDispatch();
   const itemsSelector = useSelector(
-    (state: { cart: { items: item[]; total: number } }) => state.cart.items
+    (state: { cart: { items: Item[]; total: number } }) => state.cart.items
   );
 
   const currentItemSelector = itemsSelector.find((i) => i.id === item.id);
+  if (currentItemSelector === undefined) {
+    throw new TypeError("The value was promised to always be there!");
+  }
   console.log(itemsSelector);
 
   const [itemIsAdded, setItemIsAdded] = useState(false);
@@ -100,6 +96,6 @@ function EachItem({
       </div>
     </div>
   );
-}
+};
 
 export default EachItem;

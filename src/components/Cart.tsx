@@ -22,6 +22,7 @@ function Cart({
     description: string;
     price: number;
     img: string;
+    quantity: number;
   }
   const items = useSelector(
     (state: { cart: { items: item[]; total: number } }) => state.cart.items
