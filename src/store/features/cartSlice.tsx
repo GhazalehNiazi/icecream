@@ -33,7 +33,9 @@ export const cartSlice = createSlice({
       );
       if (state.items[itemIndex].quntity > 1) {
         state.items[itemIndex].quntity -= 1;
+        state.total -= state.items[itemIndex].price;
       } else {
+        state.total -= state.items[itemIndex].price;
         state.items.splice(itemIndex, 1);
       }
     },
