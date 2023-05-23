@@ -39,6 +39,7 @@ function Cart({
   const removeAllItemHandler = () => {
     dispatch(remove_all_items());
   };
+  
   return (
     <div
       className={clsx(

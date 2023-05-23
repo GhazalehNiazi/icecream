@@ -4,7 +4,7 @@ import OrderOrRules from "@/components/OrderOrRules";
 import TopPart from "@/components/TopPart";
 import { Provider } from "react-redux";
 import { store } from "@/store/store";
-import ButtomCart from "@/components/ButtomCart";
+import BottomCart from "@/components/BottomCart";
 import Cart from "@/components/Cart";
 import { useState } from "react";
 
@@ -22,7 +22,7 @@ export default function Home() {
             <Cart fullSize={showFullCart} fullSizeHandler={setShowFullCart} />
           </div>
         </div>
-        <ButtomCart fullCart={setShowFullCart} />
+        <BottomCart fullCart={setShowFullCart} />
       </main>
     </Provider>
   );
