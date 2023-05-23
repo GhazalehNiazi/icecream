@@ -40,10 +40,12 @@ function ButtomCart({ fullCart }) {
         <div className="text-xl flex items-center gap-1">
           <ShoppingCartIcon width={20} height={20} />
           سبد خرید
-          <span className="text-base">({numberOfItems})</span>
+          <span className="text-base">
+            ({numberOfItems.toLocaleString("fa-IR")})
+          </span>
         </div>
-        <div className="text-sm h-8 py-1 px-4 bg-cyan-400 rounded-2xl flex items-center gap-2 ">
-          <span>{total}</span>
+        <div className="text-md h-8 py-1 px-4 bg-cyan-400 rounded-2xl flex items-center gap-2 ">
+          <span>{total.toLocaleString("fa-IR")}</span>
           <span>تومان</span>
         </div>
       </div>
