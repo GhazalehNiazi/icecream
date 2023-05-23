@@ -29,7 +29,7 @@ function EachItem({
     (state: { cart: { items: item[]; total: number } }) => state.cart.items
   );
 
-  const choosedItem = itemsSelector.find((i) => i.id === item.id);
+  const currentItemSelector = itemsSelector.find((i) => i.id === item.id);
   console.log(itemsSelector);
 
   const [itemIsAdded, setItemIsAdded] = useState(false);
@@ -40,9 +40,9 @@ function EachItem({
   };
 
   const decrementButtonHandler = () => {
-    if (choosedItem.quntity > 1) {
+    if (currentItemSelector.quntity > 1) {
       dispatch(remove_item(item));
-    } else if (choosedItem.quntity === 1) {
+    } else if (currentItemSelector.quntity === 1) {
       dispatch(remove_item(item));
       setItemIsAdded(false);
     }
@@ -53,7 +53,7 @@ function EachItem({
       key={item.id}
       className={clsx(
         "m-3 border border-gray-300 rounded-lg flex flex-col items-center ",
-        choosedItem?.quntity > 0 ? "border-cyan-500" : ""
+        currentItemSelector?.quntity > 0 ? "border-cyan-500" : ""
       )}
     >
       <Image
@@ -83,7 +83,7 @@ function EachItem({
                 >
                   -
                 </button>
-                {choosedItem.quntity.toLocaleString("fa-IR")}
+                {currentItemSelector.quntity.toLocaleString("fa-IR")}
               </div>
             ) : (
               ""
