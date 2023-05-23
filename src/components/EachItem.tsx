@@ -79,7 +79,7 @@ function EachItem({
                 <button
                   onClick={decrementButtonHandler}
                   style={{ backgroundImage: 'url("/cloud.svg")' }}
-                  className="pb-3 w-9 h-9 object-contain bg-no-repeat bg-center z-3 text-3xl font-extralight text-center align-middle"
+                  className="pb-5 w-9 h-9 object-contain bg-no-repeat bg-center z-3 text-3xl font-extralight text-center align-middle"
                 >
                   -
                 </button>
@@ -91,7 +91,7 @@ function EachItem({
             <button
               onClick={incrementButtosnHandler}
               style={{ backgroundImage: 'url("/cloud.svg")' }}
-              className="pb-2 w-10 h-10 object-contain bg-no-repeat bg-center z-3 text-3xl font-extralight text-center align-middle"
+              className="pb-1 w-10 h-10 object-contain bg-no-repeat bg-center z-3 text-2xl font-extralight text-center align-middle"
             >
               +
             </button>
