@@ -12,10 +12,18 @@ interface Item {
   img: string;
   quantity: number;
 }
+interface InitialItem {
+  name: string;
+  id: string;
+  description: string;
+  price: number;
+  img: string;
+}
 
 interface EachItemProps {
-  item: Item;
+  item: InitialItem;
 }
+
 const EachItem: React.FC<EachItemProps> = ({ item }) => {
   const dispatch = useDispatch();
   const itemsSelector = useSelector(
@@ -23,9 +31,7 @@ const EachItem: React.FC<EachItemProps> = ({ item }) => {
   );
 
   const currentItemSelector = itemsSelector.find((i) => i.id === item.id);
-  if (currentItemSelector === undefined) {
-    throw new TypeError("The value was promised to always be there!");
-  }
+  
   console.log(itemsSelector);
 
   const [itemIsAdded, setItemIsAdded] = useState(false);
@@ -35,6 +41,9 @@ const EachItem: React.FC<EachItemProps> = ({ item }) => {
     setItemIsAdded(true);
   };
 
+  if (!currentItemSelector) {
+  return <div>not found</div>
+  }
   const decrementButtonHandler = () => {
     if (currentItemSelector.quantity > 1) {
       dispatch(remove_item(item));
@@ -43,7 +52,6 @@ const EachItem: React.FC<EachItemProps> = ({ item }) => {
       setItemIsAdded(false);
     }
   };
-
   return (
     <div
       key={item.id}
