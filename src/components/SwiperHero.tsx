@@ -25,7 +25,7 @@ function SwiperHero() {
         modules={[Pagination, Mousewheel, Autoplay]}
         className="lg:max-h-[19rem] max-w-full m-auto"
       >
-        <SwiperSlide className="">
+        <SwiperSlide key={"slide1"}>
           <Image
             className=""
             height={900}
@@ -34,7 +34,7 @@ function SwiperHero() {
             src="/slide1.jpg"
           />
         </SwiperSlide>
-        <SwiperSlide className="">
+        <SwiperSlide key={"slide2"}>
           <Image
             className=""
             height={900}
@@ -43,7 +43,7 @@ function SwiperHero() {
             src="/slide2.jpg"
           />
         </SwiperSlide>{" "}
-        <SwiperSlide className="">
+        <SwiperSlide key={"slide3"}>
           <Image
             className=""
             height={900}
@@ -52,7 +52,7 @@ function SwiperHero() {
             src="/slide3.jpg"
           />
         </SwiperSlide>{" "}
-        <SwiperSlide className="">
+        <SwiperSlide key={"slide4"}>
           <Image
             className=""
             height={900}
@@ -61,7 +61,7 @@ function SwiperHero() {
             src="/slide4.jpg"
           />
         </SwiperSlide>{" "}
-        <SwiperSlide className="">
+        <SwiperSlide key={"slide5"}>
           <Image
             className=""
             height={900}
@@ -70,7 +70,7 @@ function SwiperHero() {
             src="/slide5.jpg"
           />
         </SwiperSlide>{" "}
-        <SwiperSlide className="">
+        <SwiperSlide key={"slide6"}>
           <Image
             className=""
             height={900}
