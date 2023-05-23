@@ -32,9 +32,9 @@ function Cart({
   const removeItemHandler = (item: item) => {
     dispatch(remove_item(item));
   };
-   const removeAllItemHandler = ()=>{
-     dispatch(remove_all_items())
-   }
+  const removeAllItemHandler = () => {
+    dispatch(remove_all_items());
+  };
   return (
     <div
       className={clsx(
@@ -55,8 +55,9 @@ function Cart({
         <div className="p-2 border-b border-gray-200 flex items-center w-full justify-between text-xl font-semibold">
           <div>سبد خرید</div>
           <div className="flex ">
-            <TrashIcon onClick={removeAllItemHandler} width={25} height={25} />
+            <TrashIcon className="cursor-pointer" onClick={removeAllItemHandler} width={25} height={25} />
             <XMarkIcon
+              className="cursor-pointer lg:hidden"
               width={25}
               height={25}
               onClick={() => fullSizeHandler(false)}
@@ -74,21 +75,21 @@ function Cart({
                 {item.name}
               </div>
               <div className="text-thin flex flex-row w-full gap-1">
-                <span>{item.price} </span>
+                <span>{item.price.toLocaleString("fa-IR")} </span>
                 <span>تومان</span>
               </div>
             </div>
             <div className="flex gap-2">
               <div
                 onClick={() => addItemHandler(item)}
-                className="w-6 h-6 border border-cyan-400 rounded-xl text-center align-middle leading-[18px]"
+                className="cursor-pointer w-6 h-6 border border-cyan-400 rounded-xl text-center align-middle leading-[18px]"
               >
                 +
               </div>
-              <div>{item.quntity}</div>
+              <div>{item.quntity.toLocaleString("fa-IR")}</div>
               <div
                 onClick={() => removeItemHandler(item)}
-                className="w-6 h-6 border border-cyan-400 rounded-xl text-center align-middle leading-[18px]"
+                className=" cursor-pointer w-6 h-6 border border-cyan-400 rounded-xl text-center align-middle leading-[18px]"
               >
                 -
               </div>
@@ -99,9 +100,11 @@ function Cart({
         <div className="flex flex-col items-center gap-2 ">
           <div className="mb-3 font-medium flex items-center flex-row w-full justify-between p-2">
             <div className="text-lg">هزینه کل</div>
-            <div className="text-lg font-semibold">{total} تومان</div>
+            <div className="text-lg font-semibold">
+              {total.toLocaleString("fa-IR")} تومان
+            </div>
           </div>
-          <div className="text-cyan-500 text-bold text-xl my-6">
+          <div className="text-cyan-500 text-bold text-xl my-6 cursor-pointer">
             کد تخفیف دارید؟
           </div>
           <button className="bg-cyan-500 w-11/12 text-slate-50  lg:px-14 xl:px-20 py-2 text-thin text-xl rounded-lg">

@@ -28,11 +28,11 @@ function EachItem({
   const itemsSelector = useSelector(
     (state: { cart: { items: item[]; total: number } }) => state.cart.items
   );
+
   const choosedItem = itemsSelector.find((i) => i.id === item.id);
   console.log(itemsSelector);
 
   const [itemIsAdded, setItemIsAdded] = useState(false);
-  const [itemIndex, setItemIndex] = useState(-1);
 
   const incrementButtosnHandler = () => {
     dispatch(add_item(item));
@@ -53,7 +53,7 @@ function EachItem({
       key={item.id}
       className={clsx(
         "m-3 border border-gray-300 rounded-lg flex flex-col items-center ",
-        itemIsAdded ? "border-cyan-500" : ""
+        choosedItem?.quntity > 0 ? "border-cyan-500" : ""
       )}
     >
       <Image
@@ -71,19 +71,19 @@ function EachItem({
         </div>
         <div className="flex flex-row w-full items-center justify-between">
           <div className="flex flex-row gap-2">
-            {item.price} <span>تومان</span>{" "}
+            {item.price.toLocaleString("fa-IR")} <span>تومان</span>{" "}
           </div>
           <div className="flex flex-row gap-2 items-center">
-            {itemIsAdded ? (
+            {itemIsAdded && itemsSelector.length > 0 ? (
               <div className="flex flex-row gap-2 items-center">
                 <button
                   onClick={decrementButtonHandler}
                   style={{ backgroundImage: 'url("/cloud.svg")' }}
-                  className="w-9 h-9 object-contain bg-no-repeat bg-center z-3 text-3xl font-extralight text-center align-middle"
+                  className="pb-3 w-9 h-9 object-contain bg-no-repeat bg-center z-3 text-3xl font-extralight text-center align-middle"
                 >
                   -
                 </button>
-                {choosedItem.quntity}
+                {choosedItem.quntity.toLocaleString("fa-IR")}
               </div>
             ) : (
               ""
@@ -91,7 +91,7 @@ function EachItem({
             <button
               onClick={incrementButtosnHandler}
               style={{ backgroundImage: 'url("/cloud.svg")' }}
-              className="w-9 h-9 object-contain bg-no-repeat bg-center z-3 text-3xl font-extralight text-center align-middle"
+              className="pb-2 w-10 h-10 object-contain bg-no-repeat bg-center z-3 text-3xl font-extralight text-center align-middle"
             >
               +
             </button>

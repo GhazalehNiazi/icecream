@@ -28,7 +28,7 @@ function OrderOrRules({ cartFullSize }: { cartFullSize: boolean }) {
         <div
           onClick={orderClickHandler}
           className={clsx(
-            "p-3 basis-1/2 ",
+            "p-3 basis-1/2 cursor-pointer",
             orderIsActive ? activeClassNames : deactiveClassNames
           )}
         >
@@ -37,7 +37,7 @@ function OrderOrRules({ cartFullSize }: { cartFullSize: boolean }) {
         <div
           onClick={infoClickHandler}
           className={clsx(
-            "p-3 basis-1/2 ",
+            "p-3 basis-1/2 cursor-pointer",
             orderIsActive ? deactiveClassNames : activeClassNames
           )}
         >
