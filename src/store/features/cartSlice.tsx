@@ -6,7 +6,7 @@ interface item {
   description: string;
   price: number;
   img: string;
-  quntity: number;
+  qauntity: number;
 }
 interface initialItem {
   name: string;
@@ -25,10 +25,10 @@ export const cartSlice = createSlice({
         (item) => item.id == action.payload.id
       );
       if (itemIndex >= 0) {
-        state.items[itemIndex].quntity += 1;
+        state.items[itemIndex].qauntity += 1;
         state.total += action.payload.price;
       } else {
-        state.items.push({ ...action.payload, quntity: 1 });
+        state.items.push({ ...action.payload, qauntity: 1 });
         state.total += action.payload.price;
       }
     },
@@ -36,8 +36,8 @@ export const cartSlice = createSlice({
       const itemIndex = state.items.findIndex(
         (item) => item.id === action.payload.id
       );
-      if (state.items[itemIndex].quntity > 1) {
-        state.items[itemIndex].quntity -= 1;
+      if (state.items[itemIndex].qauntity > 1) {
+        state.items[itemIndex].qauntity -= 1;
         state.total -= state.items[itemIndex].price;
       } else {
         state.total -= state.items[itemIndex].price;
