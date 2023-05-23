@@ -48,7 +48,7 @@ function Order() {
             key={category.id}
             id={category.id}
           >
-            <div className="text-right text-2xl font-bold text-gray-500 px-10 py-2 self-start">
+            <div className="text-right text-2xl font-bold text-gray-500 lg:px-3 px-10 py-2 self-start">
               {category.name}
             </div>
             <div className="sm:grid sm:grid-cols-2 min-[1200px]:grid-cols-3 gap-2 lg:w-full ">
