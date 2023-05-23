@@ -1,6 +1,6 @@
 "use client";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-interface item {
+interface Item {
   name: string;
   id: string;
   description: string;
@@ -8,19 +8,14 @@ interface item {
   img: string;
   quantity: number;
 }
-interface initialItem {
-  name: string;
-  id: string;
-  description: string;
-  price: number;
-  img: string;
-}
-const initialState: { items: item[]; total: number } = { items: [], total: 0 };
+type InitialItem = Omit<Item, "quanitity">;
+
+const initialState: { items: Item[]; total: number } = { items: [], total: 0 };
 export const cartSlice = createSlice({
   name: "cart",
   initialState,
   reducers: {
-    add_item: (state, action: PayloadAction<initialItem>) => {
+    add_item: (state, action: PayloadAction<InitialItem>) => {
       const itemIndex = state.items.findIndex(
         (item) => item.id == action.payload.id
       );
@@ -32,7 +27,7 @@ export const cartSlice = createSlice({
         state.total += action.payload.price;
       }
     },
-    remove_item: (state, action: PayloadAction<initialItem>) => {
+    remove_item: (state, action: PayloadAction<InitialItem>) => {
       const itemIndex = state.items.findIndex(
         (item) => item.id === action.payload.id
       );
