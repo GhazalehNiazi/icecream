@@ -9,7 +9,7 @@ import Cart from "@/components/Cart";
 import { useState } from "react";
 
 export default function Home() {
-  const [showFullCart, setShowFullCart] = useState<true | false>(false);
+  const [showFullCart, setShowFullCart] = useState(false);
 
   return (
     <Provider store={store}>

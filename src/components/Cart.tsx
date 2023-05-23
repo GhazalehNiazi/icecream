@@ -14,11 +14,8 @@ function Cart({
   fullSizeHandler,
 }: {
   fullSize: boolean;
-  fullSizeHandler;
+  fullSizeHandler: React.Dispatch<React.SetStateAction<boolean>>;
 }) {
-  const items = useSelector((state) => state.cart.items);
-  const total = useSelector((state) => state.cart.total);
-  const dispatch = useDispatch();
   interface item {
     name: string;
     id: string;
@@ -26,6 +23,13 @@ function Cart({
     price: number;
     img: string;
   }
+  const items = useSelector(
+    (state: { cart: { items: item[]; total: number } }) => state.cart.items
+  );
+  const total = useSelector(
+    (state: { cart: { items: item[]; total: number } }) => state.cart.total
+  );
+  const dispatch = useDispatch();
   const addItemHandler = (item: item) => {
     dispatch(add_item(item));
   };
@@ -55,7 +59,12 @@ function Cart({
         <div className="p-2 border-b border-gray-200 flex items-center w-full justify-between text-xl font-semibold">
           <div>سبد خرید</div>
           <div className="flex ">
-            <TrashIcon className="cursor-pointer" onClick={removeAllItemHandler} width={25} height={25} />
+            <TrashIcon
+              className="cursor-pointer"
+              onClick={removeAllItemHandler}
+              width={25}
+              height={25}
+            />
             <XMarkIcon
               className="cursor-pointer lg:hidden"
               width={25}

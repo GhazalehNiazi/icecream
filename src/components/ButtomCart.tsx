@@ -2,7 +2,11 @@ import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { ShoppingCartIcon } from "@heroicons/react/24/outline";
 
-function ButtomCart({ fullCart }) {
+function ButtomCart({
+  fullCart,
+}: {
+  fullCart: React.Dispatch<React.SetStateAction<boolean>>;
+}) {
   interface item {
     name: string;
     id: string;
@@ -12,8 +16,12 @@ function ButtomCart({ fullCart }) {
     quntity: number;
   }
 
-  const items = useSelector((state) => state.cart.items);
-  const total = useSelector((state) => state.cart.total);
+  const items = useSelector(
+    (state: { cart: { items: item[]; total: number } }) => state.cart.items
+  );
+  const total = useSelector(
+    (state: { cart: { items: item[]; total: number } }) => state.cart.total
+  );
 
   const [numberOfItems, setNumberOfItems] = useState(0);
 
