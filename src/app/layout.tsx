@@ -1,11 +1,8 @@
 import "./globals.css";
-import { Inter } from "next/font/google";
 import { Vazirmatn } from "next/font/google";
 const vazirmatn = Vazirmatn({
   subsets: ["arabic", "latin"],
-  variable: "--font-vazirmatn",
 });
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata = {
   title: "Create Next App",
@@ -25,7 +22,7 @@ export default function RootLayout({
         content="#F9FAFB"
       ></meta>
       <body
-        className={`${vazirmatn.variable} ${inter.variable}  min-h-screen bg-gray-50`}
+        className={`${vazirmatn.className} min-h-screen bg-gray-50`}
       >
         {children}
       </body>
